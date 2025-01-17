@@ -8,7 +8,7 @@ import cvzone
 import math
 
 # Webcam setup
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 cap.set(3, 1280)
 cap.set(4, 720)
 
@@ -58,7 +58,7 @@ while True:
 
                 # Draw bounding box and center
                 cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
-                cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
+                cv2.circle(img, (cx, cy), 10, (255, 0, 255), cv2.FILLED)
                 cvzone.putTextRect(img, f'{currentClass} {conf}', (max(0, x1), max(30, y1)), scale=1, thickness=2)
 
                 # Check if the center crosses the red line
